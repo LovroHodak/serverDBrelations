@@ -8,9 +8,57 @@ git remote add origin https://github.com/LovroHodak/......
 git push -u origin main
 
 npm init
+npm i
 
 ADD MANUALLY TO PACKAGE.json in SCRIPTS
 "start": "node index.js",
 "dev": "nodemon index.js"
 
+npm i axios
+npm i mongoose
+npm i express
 
+npm i hbs
+npm i body-parser
+npm i morgan
+
+
+
+
+ALL COMMANDS SO FAR
+0) ADD MANUALLY TO PACKAGE.json in SCRIPTS
+"start": "node index.js",
+"dev": "nodemon index.js"
+
+1) TO RUN
+node index.js
+node test.js
+nodemon index.js
+node bin/seedBuy.js
+
+2) CONNECT TO GITHUB
+git init
+git add 
+git commit -m "myBack first push"
+git branch -M main
+git remote add origin https://github.com/LovroHodak/myBack.git
+git push -u origin main
+
+3) 
+npm init --yes (CREATES PACKAGE.json)
+npm i (CREATES PACKAGE-LOCK.json)
+
+4) 
+npm i express
+npm i -g nodemon
+npm i dotenv
+npm i hbs
+npm i mongoose
+npm i hbs
+npm i body-parser
+npm i morgan
+npm i axios
+
+
+npm i -g ironhack_generator
+irongenerate LOVRO_PROJECT_EXAMPLE_NAME

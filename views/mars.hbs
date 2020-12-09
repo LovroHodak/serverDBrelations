@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel='stylesheet' href='style.css' >
+    </head>
+
+    <body>
+        <h1 class='title'>MARS.hbs is this page</h1>
+       
+
+            {{#each photos}}
+                <div class='cont'>
+                    <img class='imgg' src={{this.img_src}} />
+                </div>
+            {{/each}}
+       
+    </body>
+</html>
+

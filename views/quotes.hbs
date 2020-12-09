@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel='stylesheet' href='style.css' >
+    </head>
+
+    <body>
+        <h1 class='title'>QUOTES.hbs is this page</h1>
+       
+
+            {{#each slicedQout}}
+                <div class='cont'>
+                    <p>--Quote:    {{this.quote}}</p>
+                </div>
+            {{/each}}
+       
+    </body>
+</html>
+

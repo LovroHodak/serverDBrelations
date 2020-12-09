@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel='stylesheet' href='style.css' >
+    </head>
+
+    <body>
+        <h1 class='title'>LANDING.hbs is this page</h1>
+       
+            {{#each slicedChar}}
+                <div class='cont'>
+                    
+                    <img class='imgg' src={{this.img}} />
+                    <p>--Name:    {{this.name}}</p>
+                </div>
+            {{/each}}
+       
+    </body>
+</html>
+

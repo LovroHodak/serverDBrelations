@@ -1,0 +1,12 @@
+.title {
+    color: red;
+}
+
+.cont {
+    border: 1px solid gray;
+    display: flex;
+}
+
+.imgg {
+    height: 40px;
+}
