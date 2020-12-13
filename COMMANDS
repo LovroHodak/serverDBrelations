@@ -21,6 +21,7 @@ npm i express
 npm i hbs
 npm i body-parser
 npm i morgan
+npm i bcryptjs
 
 
 
@@ -58,6 +59,7 @@ npm i hbs
 npm i body-parser
 npm i morgan
 npm i axios
+npm i bcryptjs
 
 
 npm i -g ironhack_generator

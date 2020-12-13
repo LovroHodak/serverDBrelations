@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel='stylesheet' href='style.css' >
+    </head>
+
+    <body>
+        <form method="POST" action="/signIn" >
+            <label>Email</label>
+            <input type='email' name='email' placeholder="Enter email">
+            <label>Password</label>
+            <input type='password' name='password' placeholder="Enter password">
+            <button type='submit'>Sign IN</button>
+        </form>
+
+        {{#if message}}
+            <div class="error"> {{message}} </div>
+        {{/if}}
+
+    </body>
+</html>

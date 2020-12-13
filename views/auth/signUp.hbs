@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel='stylesheet' href='style.css' >
+    </head>
+
+    <body>
+        <form method="POST" action="/signUp" >
+            <label>Username</label>
+            <input type='name' name='username' placeholder="Enter username">
+            <label>Email</label>
+            <input type='email' name='email' placeholder="Enter email">
+            <label>Password</label>
+            <input type='password' name='password' placeholder="Enter password">
+            <button type='submit'>Sign UP</button>
+        </form>
+
+        {{#if message}}
+            <div class="error"> {{message}} </div>
+        {{/if}}
+
+    </body>
+</html>
