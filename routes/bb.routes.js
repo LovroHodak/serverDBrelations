@@ -3,6 +3,8 @@ const router = express.Router()
 const bbModel = require('../models/bb.model')
 let axios = require('axios')
 require('dotenv').config()
+const userModel = require('../models/user.model')
+const postModel = require('../models/post.model')
 
 router.get('/', (req, res) => {
     bbModel.find()
@@ -34,6 +36,22 @@ router.get('/mars', (req, res) => {
         })
 })
 
+
+router.get('/users', (req, res) => {
+    userModel.find()
+        .then((response) => {
+            console.log('Found users: ', response)
+            res.render('users.hbs', {response})
+        })
+})
+
+router.get('/posts', (req, res) => {
+    postModel.find().populate('user')
+        .then((response) => {
+            console.log('Populate result is: ', {response})
+            res.render('posts.hbs', {response})
+        })
+})
 
 
 

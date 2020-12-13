@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel='stylesheet' href='style.css' >
+    </head>
+
+    <body>
+        <h1 class='title'>USERS.hbs is this page</h1>
+       
+
+           {{#each response}}
+            <h3>Single user info</h3>
+                <ul>
+                    <li>--User name:    {{this.name}}</li>
+                    <li>--User ID:    {{this._id}}</li>
+                </ul>
+            {{/each}}
+       
+    </body>
+</html>

@@ -23,7 +23,6 @@ router.set('view engine', 'hbs')
 router.set('views', __dirname + '/views')
 
 
-
 router.listen(port, () => {
     console.log(`Example Lovro app listening at http://localhost:${port}`)
     console.log(__dirname)

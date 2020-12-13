@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel='stylesheet' href='style.css' >
+    </head>
+
+    <body>
+        <h1 class='title'>Posts.hbs is this page</h1>
+        {{#each response}}
+                <ul>
+                    <li>Post ID: {{this._id}}</li>
+                    <li>Post BODY: {{this.body}}</li>
+                    <li>Post USER OBJECT: {{this.user}}</li>
+                </ul>
+                <h3>Post USER OBJECT _id (up) is the same as USER ID (down)</h3>
+                <h3>Going inside USER OBJECT</h3>
+                <ul>
+                    <li>User ID: {{this.user._id}}</li>
+                    <li>User NAME: {{this.user.name}}</li>
+                    <li>User EMAIL: {{this.user.email}}</li>
+                    <li>User PHONE: {{this.user.phone}}</li>
+                </ul>
+            {{/each}}
+    </body>
+</html>
