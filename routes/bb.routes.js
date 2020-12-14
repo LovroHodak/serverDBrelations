@@ -8,6 +8,9 @@ const postModel = require('../models/post.model')
 const signInUserModel = require("../models/signInUser.model");
 const bcrypt = require('bcryptjs')
 
+//this below gets commented out with this: userName = userData.userName (line 125*)
+//let userName = ''
+
 router.get('/', (req, res) => {
     bbModel.find()
         .then((characters) => {
@@ -92,7 +95,8 @@ router.post('/signUp', (req, res) => {
             email,
             password: hashedPassword
           })
-            .then(() => {
+            .then((whatt) => {
+                console.log('Whatt is this: ', whatt)
                 res.redirect('/')
             })
         })
@@ -104,11 +108,41 @@ router.get('/signIn', (req, res) => {
 });
 
 router.post('/signIn', (req, res) => {
-    res.render('auth/signIn.hbs')
     let email = req.body.email
     let password = req.body.password
 
+    signInUserModel.findOne({ email: email})
+        .then((userData) => {
+            console.log(userData)
+            if(!userData){
+                res.status(500).render('auth/signIn.hbs', {message: 'User does not exist!'})
+                return
+            }
+
+            bcrypt.compare(password, userData.password)
+                .then((result) => {
+                    console.log(result)
+                    if(result){
+                        //userName = userData.userName
+                        console.log('Req.session is: ', req.session)
+                        req.session.loggedInUser = userData
+                        console.log('Req.session.loggedinuser is: ', req.session.loggedInUser)
+                        res.redirect('/dashboard')
+                    } else {
+                        res.status(500).render('auth/signIn.hbs', {message: 'Passwords do not match!'}) 
+                    }
+                })
+                .catch(() => {
+                    res.status(500).render('auth/signIn.hbs', {errorMessage: 'Something went wrong. Try again!'})
+                })
+        })
 });
+
+router.get('/dashboard', (req, res) => {
+    console.log(req.session)
+    res.render('dashboard.hbs', {name: req.session.loggedInUser.username})
+})
+
 
 
 module.exports = router
